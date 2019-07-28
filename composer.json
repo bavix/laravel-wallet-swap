@@ -1,0 +1,56 @@
+{
+  "name": "bavix/laravel-wallet-swap",
+  "description": "Addition to the package laravel-wallet.",
+  "keywords": [
+    "swap",
+    "laravel",
+    "laravel5",
+    "credits",
+    "bavix",
+    "currency",
+    "laravel5-package",
+    "laravel-wallet",
+    "virtual",
+    "wallet",
+    "payments"
+  ],
+  "minimum-stability": "stable",
+  "homepage": "https://github.com/bavix/laravel-wallet",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Babichev Maxim",
+      "email": "info@babichev.net"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "bavix/laravel-wallet": "^3.1",
+    "florianv/laravel-swap": "^2.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^3.7",
+    "phpstan/phpstan": "^0.11",
+    "phpunit/phpunit": "^7.5|^8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Bavix\\WalletSwap\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Bavix\\WalletSwap\\Test\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Bavix\\WalletSwap\\WalletSwapServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true
+  }
+}

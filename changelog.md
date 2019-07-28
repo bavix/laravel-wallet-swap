@@ -6,7 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.0.1] - 2018-11-07
+## [0.0.1] - 2019-07-28
+### Added
+- Add class provider `RateServiceProvider`.
+- Add class rate for laravel-wallet `Rate`.
 
 [Unreleased]: https://github.com/bavix/laravel-wallet/compare/0.0.1...HEAD
-[0.0.1]: https://github.com/bavix/laravel-wallet/compare/d181a99e751c5138694580ca4361d5129baa26b3...0.0.1
+[0.0.1]: https://github.com/bavix/laravel-wallet-swap/compare/23bef636975343ea1d9171925938c7b6ff02ed85

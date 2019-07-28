@@ -5,7 +5,7 @@ namespace Bavix\WalletSwap;
 use Illuminate\Support\ServiceProvider;
 use Bavix\Wallet\Interfaces\Rateable;
 
-class WalletSwapServiceProvider extends ServiceProvider
+class RateServiceProvider extends ServiceProvider
 {
 
     /**

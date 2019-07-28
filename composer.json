@@ -26,7 +26,10 @@
   "require": {
     "php": "^7.1",
     "bavix/laravel-wallet": "^3.1",
-    "florianv/laravel-swap": "^2.0"
+    "florianv/laravel-swap": "^2.0",
+    "nyholm/psr7": "^1.1",
+    "php-http/curl-client": "^2.0",
+    "php-http/message": "^1.7"
   },
   "require-dev": {
     "orchestra/testbench": "^3.7",
@@ -46,7 +49,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Bavix\\WalletSwap\\WalletSwapServiceProvider"
+        "Bavix\\WalletSwap\\RateServiceProvider"
       ]
     }
   },

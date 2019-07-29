@@ -17,8 +17,8 @@ class TestCase extends OrchestraTestCase
     protected function getPackageProviders($app): array
     {
         return [
-            SwapServiceProvider::class,
             RateServiceProvider::class,
+            SwapServiceProvider::class,
         ];
     }
 
@@ -35,7 +35,6 @@ class TestCase extends OrchestraTestCase
             'central_bank_of_republic_turkey' => true,
             'central_bank_of_czech_republic' => true,
             'russian_central_bank' => true,
-            'webservicex' => true,
             'cryptonator' => true,
         ]);
     }

@@ -48,4 +48,50 @@ class RateTest extends TestCase
         $this->assertEquals(128, $rate->convertTo($usd));
     }
 
+    /**
+     * @return void
+     */
+    public function testCryptoBTCUSD(): void
+    {
+        $usd = new Wallet();
+        $usd->slug = 'usd';
+
+        $btc = new Wallet();
+        $btc->slug = 'btc';
+
+        $rate = (new Rate())
+            ->withCurrency($btc)
+            ->withAmount(20);
+
+        /**
+         * @var ExchangeRate $expected
+         */
+        $expected = Swap::latest('BTC/USD');
+
+        $this->assertEquals($expected->getValue() * 20, $rate->convertTo($usd));
+    }
+
+    /**
+     * @return void
+     */
+    public function testCryptoUSDBTC(): void
+    {
+        $usd = new Wallet();
+        $usd->slug = 'usd';
+
+        $btc = new Wallet();
+        $btc->slug = 'btc';
+
+        $rate = (new Rate())
+            ->withCurrency($usd)
+            ->withAmount(100);
+
+        /**
+         * @var ExchangeRate $expected
+         */
+        $expected = Swap::latest('USD/BTC');
+
+        $this->assertEquals($expected->getValue() * 100, $rate->convertTo($btc));
+    }
+
 }

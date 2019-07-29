@@ -16,9 +16,15 @@ class RateTest extends TestCase
     public function testSimple(): void
     {
         $usd = new Wallet();
+        $usd->holder_type = __CLASS__;
+        $usd->holder_id = 1;
+        $usd->name = 'Test';
         $usd->slug = 'usd';
 
         $eur = new Wallet();
+        $eur->holder_type = __CLASS__;
+        $eur->holder_id = 1;
+        $eur->name = 'Test';
         $eur->slug = 'eur';
 
         $rate = (new Rate())
@@ -40,6 +46,9 @@ class RateTest extends TestCase
     {
         $usd = new Wallet();
         $usd->slug = 'usd';
+        $usd->name = 'Test';
+        $usd->holder_type = __CLASS__;
+        $usd->holder_id = 1;
 
         $rate = (new Rate())
             ->withCurrency($usd)
@@ -55,9 +64,15 @@ class RateTest extends TestCase
     {
         $usd = new Wallet();
         $usd->slug = 'usd';
+        $usd->holder_type = __CLASS__;
+        $usd->holder_id = 1;
+        $usd->name = 'Test';
 
         $btc = new Wallet();
         $btc->slug = 'btc';
+        $btc->holder_type = __CLASS__;
+        $btc->holder_id = 1;
+        $btc->name = 'Btcccc';
 
         $rate = (new Rate())
             ->withCurrency($btc)
@@ -78,9 +93,15 @@ class RateTest extends TestCase
     {
         $usd = new Wallet();
         $usd->slug = 'usd';
+        $usd->holder_type = __CLASS__;
+        $usd->holder_id = 1;
+        $usd->name = 'Test';
 
         $btc = new Wallet();
         $btc->slug = 'btc';
+        $btc->holder_type = __CLASS__;
+        $btc->holder_id = 1;
+        $btc->name = 'Test';
 
         $rate = (new Rate())
             ->withCurrency($usd)

@@ -3,10 +3,10 @@
 namespace Bavix\WalletSwap;
 
 use Bavix\Wallet\Interfaces\Wallet;
+use Bavix\Wallet\Services\WalletService;
 use Bavix\Wallet\Simple\Rate as Rateable;
 use Exchanger\Contract\ExchangeRate;
 use Exchanger\CurrencyPair;
-use Illuminate\Support\Str;
 use Swap\Laravel\Facades\Swap;
 
 class Rate extends Rateable
@@ -21,9 +21,12 @@ class Rate extends Rateable
      */
     public function rate(Wallet $wallet): float
     {
-        $from = Str::upper($this->withCurrency->slug);
-        $to = Str::upper($wallet->slug);
-        $pair = new CurrencyPair($from, $to);
+        $from = app(WalletService::class)->getWallet($this->withCurrency);
+        $to = app(WalletService::class)->getWallet($wallet);
+        $pair = new CurrencyPair(
+            $from->currency,
+            $to->currency
+        );
 
         if ($pair->isIdentical()) {
             /** is equal */

@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2019-10-21
+### Added
+- support laravel-wallet v4.0
+
 ## [1.0.0] - 2019-07-29
 ### Added
 - support laravel-wallet v3.1.1
@@ -26,7 +30,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add class provider `RateServiceProvider`.
 - Add class rate for laravel-wallet `Rate`.
 
-[Unreleased]: https://github.com/bavix/laravel-wallet-swap/compare/1.0.0...HEAD
+[Unreleased]: https://github.com/bavix/laravel-wallet-swap/compare/1.1.0...HEAD
+[1.1.0]: https://github.com/bavix/laravel-wallet-swap/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/bavix/laravel-wallet-swap/compare/0.0.2...1.0.0
 [0.0.2]: https://github.com/bavix/laravel-wallet-swap/compare/0.0.1...0.0.2
 [0.0.1]: https://github.com/bavix/laravel-wallet-swap/compare/23bef636975343ea1d9171925938c7b6ff02ed85

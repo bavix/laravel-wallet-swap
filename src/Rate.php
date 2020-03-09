@@ -2,6 +2,7 @@
 
 namespace Bavix\WalletSwap;
 
+use Bavix\Wallet\Interfaces\Mathable;
 use Bavix\Wallet\Interfaces\Wallet;
 use Bavix\Wallet\Services\WalletService;
 use Bavix\Wallet\Simple\Rate as Rateable;
@@ -19,7 +20,7 @@ class Rate extends Rateable
      * @param Wallet $wallet
      * @return float
      */
-    public function rate(Wallet $wallet): float
+    public function rate(Wallet $wallet)
     {
         $from = app(WalletService::class)->getWallet($this->withCurrency);
         $to = app(WalletService::class)->getWallet($wallet);
@@ -44,9 +45,12 @@ class Rate extends Rateable
      * @param Wallet $wallet
      * @return float
      */
-    public function convertTo(Wallet $wallet): float
+    public function convertTo(Wallet $wallet)
     {
-        return parent::convertTo($wallet) * $this->rate($wallet);
+        return app(Mathable::class)->mul(
+            parent::convertTo($wallet),
+            $this->rate($wallet)
+        );
     }
 
 }

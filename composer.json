@@ -4,13 +4,13 @@
   "keywords": [
     "swap",
     "laravel",
-    "laravel5",
     "laravel6",
+    "laravel7",
     "credits",
     "bavix",
     "currency",
-    "laravel5-package",
     "laravel6-package",
+    "laravel7-package",
     "laravel-wallet",
     "virtual",
     "wallet",
@@ -27,16 +27,16 @@
   ],
   "require": {
     "php": "^7.2",
-    "bavix/laravel-wallet": "^4.0",
-    "florianv/laravel-swap": "^2.0",
-    "nyholm/psr7": "^1.1",
-    "php-http/curl-client": "^2.0",
-    "php-http/message": "^1.7"
+    "bavix/laravel-wallet": "5.0.x-dev",
+    "florianv/laravel-swap": "^2.1",
+    "nyholm/psr7": "^1.2",
+    "php-http/curl-client": "^2.1",
+    "php-http/message": "^1.8"
   },
   "require-dev": {
-    "orchestra/testbench": "^4.0",
-    "phpstan/phpstan": "^0.11",
-    "phpunit/phpunit": "^8.3"
+    "orchestra/testbench": "^4.0|^5.0",
+    "phpstan/phpstan": "^0.12",
+    "phpunit/phpunit": "^8.0|^9.0"
   },
   "autoload": {
     "psr-4": {

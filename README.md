@@ -2,6 +2,7 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/bavix/laravel-wallet-swap/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/bavix/laravel-wallet-swap/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/bavix/laravel-wallet-swap/badges/build.png?b=master)](https://scrutinizer-ci.com/g/bavix/laravel-wallet-swap/build-status/master)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/bavix/laravel-wallet-swap/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+[![Mutation testing badge](https://badge.stryker-mutator.io/github.com/bavix/laravel-wallet-swap/master)](https://packagist.org/packages/bavix/laravel-wallet-swap)
 
 [![Package Rank](https://phppackages.org/p/bavix/laravel-wallet-swap/badge/rank.svg)](https://packagist.org/packages/bavix/laravel-wallet-swap)
 [![Latest Stable Version](https://poser.pugx.org/bavix/laravel-wallet-swap/v/stable)](https://packagist.org/packages/bavix/laravel-wallet-swap)

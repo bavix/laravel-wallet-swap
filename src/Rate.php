@@ -18,7 +18,7 @@ class Rate extends Rateable
      * Makes a request for an API Swap and receives data.
      *
      * @param Wallet $wallet
-     * @return float
+     * @return int|float
      */
     public function rate(Wallet $wallet)
     {
@@ -37,7 +37,7 @@ class Rate extends Rateable
         /**
          * @var ExchangeRate $rate
          */
-        $rate = Swap::latest((string)$pair);
+        $rate = Swap::latest($pair);
         return $rate->getValue();
     }
 

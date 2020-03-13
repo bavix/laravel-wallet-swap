@@ -111,8 +111,15 @@ class RateTest extends TestCase
          * @var ExchangeRate $expected
          */
         $expected = Swap::latest('USD/BTC');
-
         $this->assertEquals($expected->getValue() * 100, $rate->convertTo($btc));
+        $this->assertEquals($expected->getValue(), $rate->rate($btc));
+
+        /**
+         * @var ExchangeRate $expected
+         */
+        $expected = Swap::latest('BTC/USD');
+        $this->assertEquals($expected->getValue() * 100, $rate->withCurrency($btc)->convertTo($usd));
+        $this->assertEquals($expected->getValue(), $rate->withCurrency($btc)->rate($usd));
     }
 
 }

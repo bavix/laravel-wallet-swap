@@ -27,7 +27,7 @@
   ],
   "require": {
     "php": "^7.2",
-    "bavix/laravel-wallet": "5.0.x-dev",
+    "bavix/laravel-wallet": "^5.0",
     "florianv/laravel-swap": "^2.1",
     "nyholm/psr7": "^1.2",
     "php-http/curl-client": "^2.1",

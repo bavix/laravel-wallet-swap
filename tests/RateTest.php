@@ -2,6 +2,7 @@
 
 namespace Bavix\WalletSwap\Test;
 
+use Bavix\Wallet\Interfaces\Mathable;
 use Bavix\Wallet\Models\Wallet;
 use Bavix\WalletSwap\Rate;
 use Exchanger\ExchangeRate;
@@ -36,7 +37,7 @@ class RateTest extends TestCase
          */
         $expected = Swap::latest('USD/EUR');
 
-        $this->assertEquals($expected->getValue() * 99, $rate->convertTo($eur));
+        self::assertEquals($expected->getValue() * 99, $rate->convertTo($eur));
     }
 
     /**
@@ -54,7 +55,7 @@ class RateTest extends TestCase
             ->withCurrency($usd)
             ->withAmount(128);
 
-        $this->assertEquals(128, $rate->convertTo($usd));
+        self::assertEquals(128, $rate->convertTo($usd));
     }
 
     /**
@@ -83,7 +84,7 @@ class RateTest extends TestCase
          */
         $expected = Swap::latest('BTC/USD');
 
-        $this->assertEquals($expected->getValue() * 20, $rate->convertTo($usd));
+        self::assertEquals($expected->getValue() * 20, $rate->convertTo($usd));
     }
 
     /**
@@ -111,15 +112,16 @@ class RateTest extends TestCase
          * @var ExchangeRate $expected
          */
         $expected = Swap::latest('USD/BTC');
-        $this->assertEquals($expected->getValue() * 100, $rate->convertTo($btc));
-        $this->assertEquals($expected->getValue(), $rate->rate($btc));
+        self::assertEquals($expected->getValue() * 100, $rate->convertTo($btc));
+        self::assertEquals($expected->getValue(), $rate->rate($btc));
 
         /**
          * @var ExchangeRate $expected
          */
         $expected = Swap::latest('BTC/USD');
-        $this->assertEquals($expected->getValue() * 100, $rate->withCurrency($btc)->convertTo($usd));
-        $this->assertEquals($expected->getValue(), $rate->withCurrency($btc)->rate($usd));
+        $expectedValue = app(Mathable::class)->mul($expected->getValue(), 100);
+        self::assertEquals($expectedValue, $rate->withCurrency($btc)->convertTo($usd));
+        self::assertEquals($expected->getValue(), $rate->withCurrency($btc)->rate($usd));
     }
 
 }

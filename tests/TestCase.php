@@ -17,7 +17,7 @@ class TestCase extends OrchestraTestCase
     public function setUp(): void
     {
         parent::setUp();
-        $this->artisan('migrate', ['--database' => 'testbench'])->run();
+        $this->artisan('migrate')->run();
     }
 
     /**
@@ -48,14 +48,6 @@ class TestCase extends OrchestraTestCase
             'central_bank_of_czech_republic' => true,
             'russian_central_bank' => true,
             'cryptonator' => true,
-        ]);
-
-        // database
-        $app['config']->set('database.default', 'testbench');
-        $app['config']->set('database.connections.testbench', [
-            'driver' => 'sqlite',
-            'database' => ':memory:',
-            'prefix' => '',
         ]);
     }
 

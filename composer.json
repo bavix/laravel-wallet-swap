@@ -31,7 +31,9 @@
     "php": "^7.3",
     "bavix/laravel-wallet": "6.x-dev",
     "florianv/laravel-swap": "^2.2",
-    "nyholm/psr7": "^1.3"
+    "nyholm/psr7": "^1.3",
+    "php-http/curl-client": "^2.1",
+    "php-http/message": "^1.9"
   },
   "require-dev": {
     "infection/infection": "0.17.*",

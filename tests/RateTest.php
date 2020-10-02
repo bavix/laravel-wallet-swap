@@ -10,7 +10,6 @@ use Swap\Laravel\Facades\Swap;
 
 class RateTest extends TestCase
 {
-
     /**
      * @return void
      */
@@ -123,5 +122,4 @@ class RateTest extends TestCase
         self::assertEquals($expectedValue, $rate->withCurrency($btc)->convertTo($usd));
         self::assertEquals($expected->getValue(), $rate->withCurrency($btc)->rate($usd));
     }
-
 }

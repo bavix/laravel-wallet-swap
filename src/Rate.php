@@ -12,7 +12,6 @@ use Swap\Laravel\Facades\Swap;
 
 class Rate extends Rateable
 {
-
     /**
      * The method calculates the rate between currencies.
      * Makes a request for an API Swap and receives data.
@@ -38,6 +37,7 @@ class Rate extends Rateable
          * @var ExchangeRate $rate
          */
         $rate = Swap::latest($pair);
+
         return $rate->getValue();
     }
 
@@ -52,5 +52,4 @@ class Rate extends Rateable
             $this->rate($wallet)
         );
     }
-
 }

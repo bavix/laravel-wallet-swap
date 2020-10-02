@@ -4,13 +4,12 @@ namespace Bavix\WalletSwap\Test;
 
 use Bavix\Wallet\WalletServiceProvider;
 use Bavix\WalletSwap\RateServiceProvider;
-use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Illuminate\Foundation\Application;
+use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Swap\Laravel\SwapServiceProvider;
 
 class TestCase extends OrchestraTestCase
 {
-
     /**
      * @return void
      */
@@ -50,5 +49,4 @@ class TestCase extends OrchestraTestCase
             'cryptonator' => true,
         ]);
     }
-
 }

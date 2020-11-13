@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0] - 2020-11-13
+
+### Added
+- support laravel-wallet v6.0
+- support php ^8.0
+- More unit tests
+
 ## [2.0.0] - 2020-03-13
 
 ### Added

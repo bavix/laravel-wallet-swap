@@ -4,20 +4,19 @@ namespace Bavix\WalletSwap\Test;
 
 use Bavix\Wallet\WalletServiceProvider;
 use Bavix\WalletSwap\RateServiceProvider;
-use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Illuminate\Foundation\Application;
+use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Swap\Laravel\SwapServiceProvider;
 
 class TestCase extends OrchestraTestCase
 {
-
     /**
      * @return void
      */
     public function setUp(): void
     {
         parent::setUp();
-        $this->artisan('migrate', ['--database' => 'testbench'])->run();
+        $this->artisan('migrate')->run();
     }
 
     /**
@@ -49,14 +48,5 @@ class TestCase extends OrchestraTestCase
             'russian_central_bank' => true,
             'cryptonator' => true,
         ]);
-
-        // database
-        $app['config']->set('database.default', 'testbench');
-        $app['config']->set('database.connections.testbench', [
-            'driver' => 'sqlite',
-            'database' => ':memory:',
-            'prefix' => '',
-        ]);
     }
-
 }

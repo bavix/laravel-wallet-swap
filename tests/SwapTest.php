@@ -37,7 +37,7 @@ class SwapTest extends TestCase
         self::assertSame(0, $mathService->compare(128, $value));
     }
 
-    public function testCryptoBTCUSD(): void
+    public function testCryptoBtcUsd(): void
     {
         $mathService = app(MathServiceInterface::class);
         $value = app(ExchangeServiceInterface::class)
@@ -50,7 +50,7 @@ class SwapTest extends TestCase
         self::assertSame(0, $mathService->compare($expected->getValue() * 20, $value));
     }
 
-    public function testCryptoUSDBTC(): void
+    public function testCryptoUsdBtc(): void
     {
         $mathService = app(MathServiceInterface::class);
         $value = app(ExchangeServiceInterface::class)

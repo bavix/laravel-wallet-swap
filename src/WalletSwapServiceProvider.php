@@ -16,10 +16,6 @@ final class WalletSwapServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        if (!$this->app->runningInConsole()) {
-            return;
-        }
-
         $this->app->singleton(ExchangeServiceInterface::class, SwapExchangeService::class);
     }
 }

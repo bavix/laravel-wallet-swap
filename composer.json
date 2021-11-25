@@ -4,15 +4,9 @@
   "keywords": [
     "swap",
     "laravel",
-    "laravel6",
-    "laravel7",
-    "laravel8",
     "credits",
     "bavix",
     "currency",
-    "laravel6-package",
-    "laravel7-package",
-    "laravel8-package",
     "laravel-wallet",
     "virtual",
     "wallet",
@@ -36,10 +30,15 @@
     "php-http/message": "^1.9"
   },
   "require-dev": {
-    "infection/infection": "~0.25",
+    "ergebnis/phpstan-rules": "^1.0",
+    "infection/infection": "^0.25.3",
     "orchestra/testbench": "^6.0",
-    "phpstan/phpstan": "^0.12",
-    "phpunit/phpunit": "^9.5"
+    "phpstan/phpstan": "^1.2",
+    "phpunit/phpunit": "^9.5",
+    "psalm/plugin-laravel": "^1.5",
+    "rector/rector": "^0.12.5",
+    "symplify/easy-coding-standard": "^9.4",
+    "vimeo/psalm": "^4.13"
   },
   "autoload": {
     "psr-4": {
@@ -57,6 +56,19 @@
         "Bavix\\WalletSwap\\WalletSwapServiceProvider"
       ]
     }
+  },
+  "scripts": {
+    "unit":"@php vendor/bin/phpunit --coverage-xml=build/coverage-xml --log-junit=build/junit.xml",
+    "infect": "@php vendor/bin/infection --coverage=build --min-msi=50 -j$(nproc)",
+    "phpstan": "@php vendor/bin/phpstan analyse -vvv --debug --memory-limit 2G -l 7 src/",
+    "phpstan-baseline": "@php vendor/bin/phpstan analyse -vvv --debug --memory-limit 2G -l 7 src/ --generate-baseline",
+    "ecs": "@php vendor/bin/ecs check",
+    "ecs-fix": "@php vendor/bin/ecs check --fix",
+    "ecs-cc": "@php vendor/bin/ecs --clear-cache",
+    "psalm": "@php vendor/bin/psalm",
+    "psalm-cc": "@php vendor/bin/psalm --clear-cache",
+    "rector": "@php vendor/bin/rector process --dry-run",
+    "rector-fix": "@php vendor/bin/rector process"
   },
   "config": {
     "sort-packages": true

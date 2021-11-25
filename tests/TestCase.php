@@ -10,12 +10,12 @@ use Illuminate\Foundation\Application;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Swap\Laravel\SwapServiceProvider;
 
+/**
+ * @internal
+ */
 class TestCase extends OrchestraTestCase
 {
-    /**
-     * @return void
-     */
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
         $this->artisan('migrate')->run();
@@ -23,7 +23,6 @@ class TestCase extends OrchestraTestCase
 
     /**
      * @param Application $app
-     * @return array
      */
     protected function getPackageProviders($app): array
     {
@@ -38,7 +37,6 @@ class TestCase extends OrchestraTestCase
      * Define environment setup.
      *
      * @param Application $app
-     * @return void
      */
     protected function getEnvironmentSetUp($app): void
     {

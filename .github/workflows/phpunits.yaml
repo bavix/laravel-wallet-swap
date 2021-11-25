@@ -1,0 +1,58 @@
+name: phpunits
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  units:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-versions: [7.4, 8.0, 8.1]
+
+    steps:
+      - name: Checkout
+        id: git-checkout
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        id: php-install
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, pgsql, mysql, sqlite, redis, memcached
+          coverage: pcov
+
+      - name: Validate composer.json and composer.lock
+        id: composer-validate
+        run: composer validate --strict
+
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v2
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      - name: Install dependencies
+        id: composer-dependencies
+        run: composer install --prefer-dist --no-progress
+
+      - name: Prepare run test suite
+        id: unit-prepare
+        run: |
+          mkdir build
+
+      - name: Run test suite
+        id: unit-run
+        run: composer unit
+
+      - name: Run test suite
+        id: infect-run
+        run: composer infect

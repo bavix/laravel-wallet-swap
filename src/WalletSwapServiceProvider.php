@@ -14,7 +14,7 @@ final class WalletSwapServiceProvider extends ServiceProvider
      *
      * @codeCoverageIgnore
      */
-    public function boot(): void
+    public function register(): void
     {
         if (!$this->app->runningInConsole()) {
             return;

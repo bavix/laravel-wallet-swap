@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bavix\WalletSwap;
 
-use Bavix\Wallet\Interfaces\Rateable;
+use Bavix\Wallet\Services\ExchangeServiceInterface;
 use Illuminate\Support\ServiceProvider;
 
-class RateServiceProvider extends ServiceProvider
+class WalletSwapServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap services.
@@ -19,6 +21,6 @@ class RateServiceProvider extends ServiceProvider
             return;
         }
 
-        $this->app->singleton(Rateable::class, Rate::class);
+        $this->app->singleton(ExchangeServiceInterface::class, SwapExchangeService::class);
     }
 }

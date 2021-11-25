@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bavix\WalletSwap\Test;
 
 use Bavix\Wallet\WalletServiceProvider;
-use Bavix\WalletSwap\RateServiceProvider;
+use Bavix\WalletSwap\WalletSwapServiceProvider;
 use Illuminate\Foundation\Application;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Swap\Laravel\SwapServiceProvider;
@@ -27,7 +29,7 @@ class TestCase extends OrchestraTestCase
     {
         return [
             WalletServiceProvider::class,
-            RateServiceProvider::class,
+            WalletSwapServiceProvider::class,
             SwapServiceProvider::class,
         ];
     }

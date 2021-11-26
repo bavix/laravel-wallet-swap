@@ -9,7 +9,6 @@ use Illuminate\Support\ServiceProvider;
 
 final class WalletSwapServiceProvider extends ServiceProvider
 {
-    /** @codeCoverageIgnore */
     public function register(): void
     {
         $this->app->singleton(CurrencyServiceInterface::class, CurrencyService::class);

@@ -12,7 +12,7 @@ use Swap\Laravel\Facades\Swap;
 /**
  * @internal
  */
-class SwapTest extends TestCase
+final class SwapTest extends TestCase
 {
     public function testSimple(): void
     {

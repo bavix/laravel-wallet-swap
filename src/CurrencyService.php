@@ -39,29 +39,29 @@ final class CurrencyService implements CurrencyServiceInterface
      */
     public function rate(string $fromCurrency, string $toCurrency): string
     {
-        if (strtolower($fromCurrency) === strtolower($toCurrency)) {
+        if ($fromCurrency === $toCurrency) {
             return '1';
         }
 
         try {
             return (string) $this->swapService
-                ->latest(strtoupper($fromCurrency.'/'.$toCurrency))
+                ->latest($fromCurrency.'/'.$toCurrency)
                 ->getValue()
             ;
         } catch (ExchangerCacheException $exception) {
-            throw new CacheException($exception->getMessage(), 0, $exception);
+            throw new CacheException($exception->getMessage(), $exception->getCode(), $exception);
         } catch (ExchangerNonBreakingInvalidArgumentException $exception) {
-            throw new NonBreakingInvalidArgumentException($exception->getMessage(), 0, $exception);
+            throw new NonBreakingInvalidArgumentException($exception->getMessage(), $exception->getCode(), $exception);
         } catch (ExchangerUnsupportedExchangeQueryException $exception) {
-            throw new UnsupportedExchangeQueryException($exception->getMessage(), 0, $exception);
+            throw new UnsupportedExchangeQueryException($exception->getMessage(), $exception->getCode(), $exception);
         } catch (ExchangerUnsupportedCurrencyPairException $exception) {
-            throw new UnsupportedCurrencyPairException($exception->getMessage(), 0, $exception);
+            throw new UnsupportedCurrencyPairException($exception->getMessage(), $exception->getCode(), $exception);
         } catch (ExchangerUnsupportedDateException $exception) {
-            throw new UnsupportedDateException($exception->getMessage(), 0, $exception);
+            throw new UnsupportedDateException($exception->getMessage(), $exception->getCode(), $exception);
         } catch (ExchangerException $exception) {
-            throw new SwapException($exception->getMessage(), 0, $exception);
+            throw new SwapException($exception->getMessage(), $exception->getCode(), $exception);
         } catch (\Throwable $exception) {
-            throw new SwapRuntimeException($exception->getMessage(), 0, $exception);
+            throw new SwapRuntimeException($exception->getMessage(), $exception->getCode(), $exception);
         }
     }
 }

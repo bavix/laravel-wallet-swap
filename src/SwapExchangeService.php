@@ -28,8 +28,6 @@ final class SwapExchangeService implements ExchangeServiceInterface
     }
 
     /**
-     * @param float|int|string $amount
-     *
      * @throws CacheException
      * @throws NonBreakingInvalidArgumentException
      * @throws UnsupportedExchangeQueryException
@@ -38,7 +36,7 @@ final class SwapExchangeService implements ExchangeServiceInterface
      * @throws SwapException
      * @throws SwapRuntimeException
      */
-    public function convertTo(string $fromCurrency, string $toCurrency, $amount): string
+    public function convertTo(string $fromCurrency, string $toCurrency, float|int|string $amount): string
     {
         return $this->mathService->mul($this->currencyService->rate($fromCurrency, $toCurrency), $amount);
     }

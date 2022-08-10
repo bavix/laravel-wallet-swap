@@ -21,11 +21,8 @@ use Swap\Swap;
 
 final class CurrencyService implements CurrencyServiceInterface
 {
-    private Swap $swapService;
-
-    public function __construct(Swap $swapService)
+    public function __construct(private Swap $swapService)
     {
-        $this->swapService = $swapService;
     }
 
     /**
@@ -45,7 +42,7 @@ final class CurrencyService implements CurrencyServiceInterface
 
         try {
             return (string) $this->swapService
-                ->latest($fromCurrency.'/'.$toCurrency)
+                ->latest($fromCurrency . '/' . $toCurrency)
                 ->getValue()
             ;
         } catch (ExchangerCacheException $exception) {

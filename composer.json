@@ -35,8 +35,8 @@
     "orchestra/testbench": "^7.0",
     "phpstan/phpstan": "^1.2",
     "phpunit/phpunit": "^9.5",
-    "rector/rector": "^0.13.0",
-    "symplify/easy-coding-standard": "^10.0",
+    "rector/rector": "^0.13",
+    "symplify/easy-coding-standard": "^11.1",
     "vimeo/psalm": "^4.13"
   },
   "autoload": {
@@ -70,6 +70,9 @@
     "rector-fix": "@php vendor/bin/rector process"
   },
   "config": {
-    "sort-packages": true
+    "sort-packages": true,
+    "allow-plugins": {
+      "infection/extension-installer": true
+    }
   }
 }

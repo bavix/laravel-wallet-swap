@@ -16,7 +16,7 @@ laravel-wallet-swap - Addition to the package laravel-wallet.
 * **Package**: laravel-wallet-swap
 * **Version**: [![Latest Stable Version](https://poser.pugx.org/bavix/laravel-wallet-swap/v/stable)](https://packagist.org/packages/bavix/laravel-wallet-swap)
 * **PHP Version**: 7.1+ 
-* **Laravel Version**: `5.5`, `5.6`, `5.7`, `5.8`, `6.x`, `7.x`, `8.x`
+* **Laravel Version**: `5.5`, `5.6`, `5.7`, `5.8`, `6.x`, `7.x`, `8.x`, `9.x`
 * **[Composer](https://getcomposer.org/):** `composer require bavix/laravel-wallet-swap`
 
 ---

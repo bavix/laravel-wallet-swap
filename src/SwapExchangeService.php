@@ -16,8 +16,10 @@ use Bavix\WalletSwap\Exception\UnsupportedExchangeQueryException;
 
 final class SwapExchangeService implements ExchangeServiceInterface
 {
-    public function __construct(private CurrencyServiceInterface $currencyService, private MathServiceInterface $mathService)
-    {
+    public function __construct(
+        private readonly CurrencyServiceInterface $currencyService,
+        private readonly MathServiceInterface $mathService,
+    ) {
     }
 
     /**

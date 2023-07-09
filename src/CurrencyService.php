@@ -21,7 +21,7 @@ use Swap\Swap;
 
 final class CurrencyService implements CurrencyServiceInterface
 {
-    public function __construct(private Swap $swapService)
+    public function __construct(private readonly Swap $swapService)
     {
     }
 

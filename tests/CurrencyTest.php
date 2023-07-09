@@ -46,7 +46,7 @@ final class CurrencyTest extends TestCase
         $currencyService->rate('USD', 'RUB');
     }
 
-    public function exceptionDataProvider(): iterable
+    public static function exceptionDataProvider(): iterable
     {
         $currencyPair = new CurrencyPair('USD', 'EUR');
         $service = new PhpArray([]);

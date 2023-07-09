@@ -42,14 +42,6 @@ class TestCase extends OrchestraTestCase
     {
         // swap
         $app['config']->set('swap.services', [
-            'european_central_bank' => true,
-            'national_bank_of_romania' => true,
-            'central_bank_of_republic_turkey' => true,
-            'central_bank_of_czech_republic' => true,
-            'russian_central_bank' => true,
-            'bulgarian_national_bank' => true,
-
-            // fallback
             'array' => [
                 [
                     'EUR/USD' => round(114.19 / 100, 3),

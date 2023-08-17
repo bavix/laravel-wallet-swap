@@ -31,7 +31,7 @@
   },
   "require-dev": {
     "driftingly/rector-laravel": "^0.22.0",
-    "ergebnis/phpstan-rules": "^1.0",
+    "ergebnis/phpstan-rules": "^2.1",
     "infection/infection": "^0.27",
     "orchestra/testbench": "^8.5",
     "phpstan/phpstan": "^1.10",

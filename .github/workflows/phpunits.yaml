@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        php-versions: [8.1, 8.2]
+        php-versions: [8.2, 8.3]
 
     steps:
       - name: Checkout
@@ -51,8 +51,8 @@ jobs:
 
       - name: Run test suite
         id: unit-run
-        run: composer unit
+        run: composer parabench
 
-      - name: Run test suite
+      - name: Run mutation test suite
         id: infect-run
         run: composer infect

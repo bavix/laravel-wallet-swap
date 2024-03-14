@@ -22,22 +22,24 @@
     }
   ],
   "require": {
-    "php": "^8.1",
-    "bavix/laravel-wallet": "^10.0",
+    "php": "^8.2",
+    "bavix/laravel-wallet": "^11.0",
     "florianv/laravel-swap": "^2.3",
     "nyholm/psr7": "^1.8",
     "php-http/curl-client": "^2.3",
     "php-http/message": "^1.16"
   },
   "require-dev": {
-    "driftingly/rector-laravel": "^0.26.0",
-    "ergebnis/phpstan-rules": "^1.0",
-    "infection/infection": "^0.27",
-    "orchestra/testbench": "^8.5",
+    "driftingly/rector-laravel": "^1.0",
+    "ergebnis/phpstan-rules": "^2.1",
+    "infection/infection": "~0.27",
+    "larastan/larastan": "^2.8",
+    "nunomaduro/collision": "^8.0",
+    "orchestra/testbench": "^9.0",
     "phpstan/phpstan": "^1.10",
-    "phpunit/phpunit": "^10.2",
-    "rector/rector": "^0.17",
-    "symplify/easy-coding-standard": "^11.5"
+    "phpunit/phpunit": "^10.5",
+    "rector/rector": "^1.0",
+    "symplify/easy-coding-standard": "^12.1"
   },
   "autoload": {
     "psr-4": {
@@ -57,10 +59,10 @@
     }
   },
   "scripts": {
-    "unit":"@php vendor/bin/phpunit --coverage-xml=build/coverage-xml --log-junit=build/junit.xml",
-    "infect": "@php vendor/bin/infection --coverage=build --min-msi=50 -j$(nproc)",
-    "phpstan": "@php vendor/bin/phpstan analyse -vvv --debug --memory-limit 2G -l 7 src/",
-    "phpstan-baseline": "@php vendor/bin/phpstan analyse -vvv --debug --memory-limit 2G -l 7 src/ --generate-baseline",
+    "parabench":"@php ./vendor/bin/testbench package:test --coverage-xml=build/coverage-xml --log-junit=build/junit.xml",
+    "infect": "@php vendor/bin/infection --coverage=build --min-msi=50 -j$(nproc) --only-covering-test-cases",
+    "phpstan": "@php vendor/bin/phpstan analyse -vvv --memory-limit 2G -c phpstan.neon",
+    "phpstan-baseline": "@php vendor/bin/phpstan analyse -vvv --memory-limit 2G -c phpstan.neon --generate-baseline phpstan.baseline.neon",
     "ecs": "@php vendor/bin/ecs check",
     "ecs-fix": "@php vendor/bin/ecs check --fix",
     "ecs-cc": "@php vendor/bin/ecs --clear-cache",

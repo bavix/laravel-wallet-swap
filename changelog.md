@@ -1,5 +1,16 @@
 # Changelog
 
+## 7.0.1 - 2024-03-14
+
+### What's Changed
+
+* Bump actions/checkout from 2 to 4 by [@dependabot](https://github.com/dependabot) in https://github.com/bavix/laravel-wallet-swap/pull/45
+* Bump actions/cache from 2 to 4 by [@dependabot](https://github.com/dependabot) in https://github.com/bavix/laravel-wallet-swap/pull/46
+* Bump bavix/.github from 0.1.6 to 0.2.4 by [@dependabot](https://github.com/dependabot) in https://github.com/bavix/laravel-wallet-swap/pull/47
+* Bump actions/stale from 1 to 9 by [@dependabot](https://github.com/dependabot) in https://github.com/bavix/laravel-wallet-swap/pull/48
+
+**Full Changelog**: https://github.com/bavix/laravel-wallet-swap/compare/7.0.0...7.0.1
+
 ## 7.0.0 - 2024-03-14
 
 ### What's Changed

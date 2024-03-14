@@ -32,15 +32,14 @@ use Throwable;
  */
 final class CurrencyTest extends TestCase
 {
-    /**
-     * @dataProvider exceptionDataProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('exceptionDataProvider')]
     public function testExceptions(string $expect, Throwable $throwable): void
     {
         $this->expectException($expect);
 
         $mockSwapService = $this->createMock(Swap::class);
-        $mockSwapService->method('latest')->willThrowException($throwable);
+        $mockSwapService->method('latest')
+            ->willThrowException($throwable);
 
         $currencyService = new CurrencyService($mockSwapService);
         $currencyService->rate('USD', 'RUB');
@@ -69,19 +68,10 @@ final class CurrencyTest extends TestCase
             new ExchangerUnsupportedDateException(new DateTimeImmutable(), $service),
         ];
 
-        yield [
-            SwapException::class,
-            new ExchangerException(),
-        ];
+        yield [SwapException::class, new ExchangerException()];
 
-        yield [
-            SwapException::class,
-            new ChainException([]),
-        ];
+        yield [SwapException::class, new ChainException([])];
 
-        yield [
-            SwapRuntimeException::class,
-            new RuntimeException(),
-        ];
+        yield [SwapRuntimeException::class, new RuntimeException()];
     }
 }

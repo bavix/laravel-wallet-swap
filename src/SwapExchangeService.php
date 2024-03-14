@@ -14,11 +14,11 @@ use Bavix\WalletSwap\Exception\UnsupportedCurrencyPairException;
 use Bavix\WalletSwap\Exception\UnsupportedDateException;
 use Bavix\WalletSwap\Exception\UnsupportedExchangeQueryException;
 
-final class SwapExchangeService implements ExchangeServiceInterface
+final readonly class SwapExchangeService implements ExchangeServiceInterface
 {
     public function __construct(
-        private readonly CurrencyServiceInterface $currencyService,
-        private readonly MathServiceInterface $mathService,
+        private CurrencyServiceInterface $currencyService,
+        private MathServiceInterface $mathService,
     ) {
     }
 

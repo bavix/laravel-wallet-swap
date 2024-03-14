@@ -16,8 +16,11 @@ parameters:
             allowAbstractClasses: true
         noExtends:
             classesAllowedToBeExtended:
+                # std
+                - Exception
+                - RuntimeException
+                - InvalidArgumentException
                 # laravel
-                - Illuminate\Console\Command
                 - Illuminate\Support\ServiceProvider
     paths:
         - src/

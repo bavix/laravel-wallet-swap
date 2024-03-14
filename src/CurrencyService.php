@@ -19,10 +19,11 @@ use Exchanger\Exception\UnsupportedDateException as ExchangerUnsupportedDateExce
 use Exchanger\Exception\UnsupportedExchangeQueryException as ExchangerUnsupportedExchangeQueryException;
 use Swap\Swap;
 
-final class CurrencyService implements CurrencyServiceInterface
+final readonly class CurrencyService implements CurrencyServiceInterface
 {
-    public function __construct(private readonly Swap $swapService)
-    {
+    public function __construct(
+        private Swap $swapService
+    ) {
     }
 
     /**
@@ -42,9 +43,8 @@ final class CurrencyService implements CurrencyServiceInterface
 
         try {
             return (string) $this->swapService
-                ->latest($fromCurrency . '/' . $toCurrency)
-                ->getValue()
-            ;
+                ->latest($fromCurrency.'/'.$toCurrency)
+                ->getValue();
         } catch (ExchangerCacheException $exception) {
             throw new CacheException($exception->getMessage(), $exception->getCode(), $exception);
         } catch (ExchangerNonBreakingInvalidArgumentException $exception) {

@@ -18,7 +18,8 @@ class TestCase extends OrchestraTestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->artisan('migrate')->run();
+        $this->artisan('migrate')
+            ->run();
     }
 
     /**
@@ -26,11 +27,7 @@ class TestCase extends OrchestraTestCase
      */
     protected function getPackageProviders($app): array
     {
-        return [
-            WalletServiceProvider::class,
-            WalletSwapServiceProvider::class,
-            SwapServiceProvider::class,
-        ];
+        return [WalletServiceProvider::class, WalletSwapServiceProvider::class, SwapServiceProvider::class];
     }
 
     /**

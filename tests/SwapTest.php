@@ -18,8 +18,7 @@ final class SwapTest extends TestCase
     {
         $mathService = app(MathServiceInterface::class);
         $value = app(ExchangeServiceInterface::class)
-            ->convertTo('USD', 'EUR', 99)
-        ;
+            ->convertTo('USD', 'EUR', 99);
 
         /** @var ExchangeRate $expected */
         $expected = Swap::latest('USD/EUR');
@@ -31,8 +30,7 @@ final class SwapTest extends TestCase
     {
         $mathService = app(MathServiceInterface::class);
         $value = app(ExchangeServiceInterface::class)
-            ->convertTo('USD', 'USD', 128)
-        ;
+            ->convertTo('USD', 'USD', 128);
 
         self::assertSame(0, $mathService->compare(128, $value));
     }
@@ -41,8 +39,7 @@ final class SwapTest extends TestCase
     {
         $mathService = app(MathServiceInterface::class);
         $value = app(ExchangeServiceInterface::class)
-            ->convertTo('BTC', 'USD', 20)
-        ;
+            ->convertTo('BTC', 'USD', 20);
 
         /** @var ExchangeRate $expected */
         $expected = Swap::latest('BTC/USD');
@@ -54,8 +51,7 @@ final class SwapTest extends TestCase
     {
         $mathService = app(MathServiceInterface::class);
         $value = app(ExchangeServiceInterface::class)
-            ->convertTo('USD', 'BTC', 100)
-        ;
+            ->convertTo('USD', 'BTC', 100);
 
         /** @var ExchangeRate $expected */
         $expected = Swap::latest('USD/BTC');

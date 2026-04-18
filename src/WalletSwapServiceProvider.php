@@ -10,6 +10,7 @@ use Illuminate\Support\ServiceProvider;
 
 final class WalletSwapServiceProvider extends ServiceProvider implements DeferrableProvider
 {
+    #[\Override]
     public function register(): void
     {
         $this->app->singleton(CurrencyServiceInterface::class, CurrencyService::class);
@@ -19,6 +20,7 @@ final class WalletSwapServiceProvider extends ServiceProvider implements Deferra
     /**
      * @return class-string[]
      */
+    #[\Override]
     public function provides(): array
     {
         return [CurrencyServiceInterface::class];

@@ -15,6 +15,8 @@ use Bavix\WalletSwap\Exception\UnsupportedExchangeQueryException;
 interface CurrencyServiceInterface
 {
     /**
+     * @return non-empty-string
+     *
      * @throws CacheException
      * @throws NonBreakingInvalidArgumentException
      * @throws UnsupportedExchangeQueryException

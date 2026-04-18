@@ -23,6 +23,8 @@ final readonly class SwapExchangeService implements ExchangeServiceInterface
     }
 
     /**
+     * @param float|int|non-empty-string $amount
+     *
      * @throws CacheException
      * @throws NonBreakingInvalidArgumentException
      * @throws UnsupportedExchangeQueryException

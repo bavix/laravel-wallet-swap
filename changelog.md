@@ -1,5 +1,22 @@
 # Changelog
 
+## 8.0.0 - 2026-04-18
+
+### What's Changed
+
+* Update phpunit/phpunit requirement from ^10.5 to ^11.0 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/bavix/laravel-wallet-swap/pull/49
+* Bump bavix/.github from 0.2.4 to 0.2.5 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/bavix/laravel-wallet-swap/pull/50
+* Bump bavix/.github from 0.2.5 to 0.3.0 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/bavix/laravel-wallet-swap/pull/51
+* Bump bavix/.github from 0.3.0 to 0.3.2 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/bavix/laravel-wallet-swap/pull/52
+* Bump bavix/.github from 0.3.2 to 0.3.3 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/bavix/laravel-wallet-swap/pull/53
+* add support laravel-wallet 12 by [@rez1dent3](https://github.com/rez1dent3) in https://github.com/bavix/laravel-wallet-swap/pull/61
+* Bump actions/cache from 4 to 5 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/bavix/laravel-wallet-swap/pull/60
+* Bump bavix/.github/.github/workflows/changelog.yml from 0.3.3 to 0.4.1 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/bavix/laravel-wallet-swap/pull/59
+* Bump actions/checkout from 4 to 6 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/bavix/laravel-wallet-swap/pull/58
+* Bump actions/stale from 9 to 10 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/bavix/laravel-wallet-swap/pull/55
+
+**Full Changelog**: https://github.com/bavix/laravel-wallet-swap/compare/7.0.1...8.0.0
+
 ## 7.0.1 - 2024-03-14
 
 ### What's Changed
